@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.clip
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -159,7 +159,7 @@ private fun CategorySection(
     onEdit: (Category) -> Unit,
     onDelete: (Category) -> Unit
 ) {
-    Column(Arrangement.spacedBy(8.dp)) {
+    Column(modifier = Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -205,8 +205,10 @@ private fun CategorySection(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Box(
-                        modifier = Modifier.size(40.dp).clip(RoundedCornerShape(10.dp))
-                            .background(category.color.copy(alpha = 0.15f)),
+                        modifier = Modifier
+                            .size(40.dp)
+                            .clip(RoundedCornerShape(10.dp))
+                            .background(Color(category.color).copy(alpha = 0.15f)),
                         contentAlignment = Alignment.Center
                     ) {
                         Text("📝", style = MaterialTheme.typography.titleMedium)
@@ -242,11 +244,11 @@ private fun AddEditCategoryDialog(
     var name by remember { mutableStateOf(category?.name ?: "") }
     var type by remember { mutableStateOf(category?.type ?: "expense") }
     var icon by remember { mutableStateOf(category?.icon ?: "receipt") }
-    var color by remember { mutableStateOf(category?.color ?: (if (type == "income") IncomeGreen.value else ExpenseRed.value)) }
+    var color by remember { mutableStateOf(category?.color ?: (if (type == "income") IncomeGreen else ExpenseRed)) }
     var error by remember { mutableStateOf<String?>(null) }
 
-    val icons = listOf("🍽", "🚌", "🏠", "⚡", "🎬", "🛒", "🏥", "🎓", "💼", "💻", "🏪", "📈", "💰", "📋")
-    val colors = listOf(IncomeGreen.value, ExpenseRed.value, 0xFF1E40AF, 0xFF059669, 0xFF7C3AED, 0xFFEC4899, 0xFFF97316, 0xFF84CC16, 0xFF06B6D4, 0xFFF43F5E)
+val icons = listOf("🍽", "🚌", "🏠", "⚡", "🎬", "🛒", "🏥", "🎓", "💼", "💻", "🏪", "📈", "💰", "📋")
+val colors = listOf(IncomeGreen.toArgb(), ExpenseRed.toArgb(), 0xFF1E40AF, 0xFF059669, 0xFF7C3AED, 0xFFEC4899, 0xFFF97316, 0xFF84CC16, 0xFF06B6D4, 0xFFF43F5E)
 
     AlertDialog(
         onDismissRequest = onDismiss,
