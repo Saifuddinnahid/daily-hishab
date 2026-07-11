@@ -17,6 +17,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.AlertDialog
@@ -39,8 +40,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.nahid.dailyhisab.domain.model.Category
@@ -216,11 +219,11 @@ private fun CategorySection(
                         }
                     }
                     IconButton(onClick = { }) {
-                        Icon(androidx.compose.material.icons.Icons.Default.Edit, "সম্পাদনা", tint = MaterialTheme.colorScheme.primary)
+                        Icon(Icons.Default.Edit, "সম্পাদনা", tint = MaterialTheme.colorScheme.primary)
                     }
                     if (!category.isDefault) {
                         IconButton(onClick = { }) {
-                            Icon(androidx.compose.material.icons.Icons.Default.Delete, "মুছুন", tint = ExpenseRed.copy(alpha = 0.7f))
+                            Icon(Icons.Default.Delete, "মুছুন", tint = ExpenseRed.copy(alpha = 0.7f))
                         }
                     }
                 }
@@ -239,11 +242,11 @@ private fun AddEditCategoryDialog(
     var name by remember { mutableStateOf(category?.name ?: "") }
     var type by remember { mutableStateOf(category?.type ?: "expense") }
     var icon by remember { mutableStateOf(category?.icon ?: "receipt") }
-    var color by remember { mutableStateOf(category?.color ?: (if (type == "income") IncomeGreen.toArgb() else ExpenseRed.toArgb())) }
+    var color by remember { mutableStateOf(category?.color ?: (if (type == "income") IncomeGreen.value else ExpenseRed.value)) }
     var error by remember { mutableStateOf<String?>(null) }
 
-    val icons = listOf("restaurant", "directions_bus", "home", "bolt", "movie", "shopping_cart", "local_hospital", "school", "work", "computer", "store", "trending_up", "attach_money", "more_horiz")
-    val colors = listOf(IncomeGreen.toArgb(), ExpenseRed.toArgb(), 0xFF1E40AF, 0xFF059669, 0xFF7C3AED, 0xFFEC4899, 0xFFF97316, 0xFF84CC16, 0xFF06B6D4, 0xFFF43F5E)
+    val icons = listOf("🍽", "🚌", "🏠", "⚡", "🎬", "🛒", "🏥", "🎓", "💼", "💻", "🏪", "📈", "💰", "📋")
+    val colors = listOf(IncomeGreen.value, ExpenseRed.value, 0xFF1E40AF, 0xFF059669, 0xFF7C3AED, 0xFFEC4899, 0xFFF97316, 0xFF84CC16, 0xFF06B6D4, 0xFFF43F5E)
 
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -309,7 +312,7 @@ private fun AddEditCategoryDialog(
                 Text("রং", style = MaterialTheme.typography.labelMedium)
                 Spacer(Modifier.height(8.dp))
                 Row(modifier = Modifier.fillMaxWidth().height(40.dp)) {
-                    listOf(IncomeGreen.toArgb(), ExpenseRed.toArgb(), 0xFF1E40AF, 0xFF059669, 0xFF7C3AED, 0xFFEC4899, 0xFFF97316, 0xFF84CC16, 0xFF06B6D4, 0xFFF43F5E).forEach { clr ->
+                    listOf(IncomeGreen.value, ExpenseRed.value, 0xFF1E40AF, 0xFF059669, 0xFF7C3AED, 0xFFEC4899, 0xFFF97316, 0xFF84CC16, 0xFF06B6D4, 0xFFF43F5E).forEach { clr ->
                         val isSelected = color == clr.toLong()
                         Box(
                             modifier = Modifier
@@ -320,9 +323,13 @@ private fun AddEditCategoryDialog(
                                 .padding(4.dp),
                             contentAlignment = Alignment.Center
                         ) {
-                            if (isSelected) Icon(androidx.compose.material.icons.Icons.Default.Check, null, tint = MaterialTheme.colorScheme.onPrimary)
+                            if (isSelected) Icon(Icons.Default.Check, null, tint = MaterialTheme.colorScheme.onPrimary)
                         }
                     }
+                }
+
+                if (error != null) {
+                    Text(error!!, color = ExpenseRed, style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(top = 8.dp))
                 }
             }
         },
