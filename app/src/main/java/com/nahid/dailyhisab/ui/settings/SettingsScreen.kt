@@ -188,7 +188,7 @@ fun SettingsScreen(
                 icon = Icons.Default.Category,
                 title = "ক্যাটাগরি ব্যবস্থাপনা",
                 subtitle = "আয়-ব্যয়ের ক্যাটাগরি যোগ/পরিবর্তন/মুছুন",
-                onClick = { }
+                onClick = { navController.navigate("categories") }
             )
         }
 

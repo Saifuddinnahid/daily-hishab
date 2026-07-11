@@ -27,6 +27,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.nahid.dailyhisab.ui.categories.CategoryManagementScreen
 import com.nahid.dailyhisab.ui.home.HomeScreen
 import com.nahid.dailyhisab.ui.transactions.TransactionListScreen
 import com.nahid.dailyhisab.ui.reports.ReportScreen
@@ -42,6 +43,7 @@ sealed class Screen(
     data object Transactions : Screen("transactions", "লেনদেন", Icons.Filled.ListAlt, Icons.Outlined.ListAlt)
     data object Reports : Screen("reports", "রিপোর্ট", Icons.Filled.BarChart, Icons.Outlined.BarChart)
     data object Settings : Screen("settings", "সেটিংস", Icons.Filled.Settings, Icons.Outlined.Settings)
+    data object CategoryManagement : Screen("categories", "ক্যাটাগরি", Icons.Filled.Category, Icons.Outlined.Category)
 }
 
 val bottomNavItems = listOf(
@@ -103,6 +105,12 @@ fun MainNavGraph(userEmail: String) {
             }
             composable(Screen.Settings.route) {
                 SettingsScreen(userEmail = userEmail, navController = navController)
+            }
+            composable(
+                route = Screen.CategoryManagement.route,
+                arguments = listOf()
+            ) {
+                CategoryManagementScreen(userEmail = userEmail, navController = navController)
             }
         }
     }

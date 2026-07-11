@@ -86,4 +86,22 @@ class MainViewModel @Inject constructor(
             _totalExpense.value = transactionRepository.getTotalExpenseBetweenDates(_userEmail.value, startDate, endDate)
         }
     }
+
+    fun addCategory(category: Category) {
+        viewModelScope.launch {
+            categoryRepository.saveCategory(category)
+        }
+    }
+
+    fun updateCategory(category: Category) {
+        viewModelScope.launch {
+            categoryRepository.updateCategory(category)
+        }
+    }
+
+    fun deleteCategory(id: Long) {
+        viewModelScope.launch {
+            categoryRepository.deleteCategory(id)
+        }
+    }
 }
