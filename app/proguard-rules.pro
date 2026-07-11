@@ -1,0 +1,2 @@
+-keep class com.nahid.dailyhisab.** { *; }
+-keepattributes *Annotation*

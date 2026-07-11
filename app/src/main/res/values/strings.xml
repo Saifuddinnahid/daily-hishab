@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">দৈনিক হিসাব</string>
+    <string name="app_title">Daily Hisab</string>
+    <string name="login">লগইন</string>
+    <string name="register">নিবন্ধন</string>
+    <string name="email">ইমেইল</string>
+    <string name="password">পাসওয়ার্ড</string>
+    <string name="confirm_password">পাসওয়ার্ড নিশ্চিত করুন</string>
+    <string name="login_title">স্বাগতম!</string>
+    <string name="login_subtitle">আপনার হিসাব ট্র্যাক করুন</string>
+    <string name="register_title">নতুন অ্যাকাউন্ট</string>
+    <string name="no_account">অ্যাকাউন্ট নেই? নিবন্ধন করুন</string>
+    <string name="have_account">ইতিমধ্যে অ্যাকাউন্ট আছে? লগইন করুন</string>
+
+    <string name="home">হোম</string>
+    <string name="transactions">লেনদেন</string>
+    <string name="categories">ক্যাটাগরি</string>
+    <string name="reports">রিপোর্ট</string>
+    <string name="settings">সেটিংস</string>
+
+    <string name="total_balance">মোট ব্যালেন্স</string>
+    <string name="total_income">মোট আয়</string>
+    <string name="total_expense">মোট ব্যয়</string>
+    <string name="today_summary">আজকের সারসংক্ষেপ</string>
+    <string name="recent_transactions">সাম্প্রতিক লেনদেন</string>
+
+    <string name="add_transaction">লেনদেন যোগ করুন</string>
+    <string name="edit_transaction">লেনদেন সম্পাদনা করুন</string>
+    <string name="delete_transaction">লেনদেন মুছুন</string>
+    <string name="amount">পরিমাণ</string>
+    <string name="note">নোট</string>
+    <string name="date">তারিখ</string>
+    <string name="type">ধরন</string>
+    <string name="income">আয়</string>
+    <string name="expense">ব্যয়</string>
+    <string name="save">সংরক্ষণ করুন</string>
+    <string name="cancel">বাতিল করুন</string>
+    <string name="delete">মুছুন</string>
+    <string name="confirm_delete">মুছে ফেলার বিষয়টি নিশ্চিত করুন</string>
+    <string name="confirm_delete_msg">আপনি কি নিশ্চিতভাবে এই লেনদেনটি মুছে ফেলতে চান?</string>
+
+    <string name="add_category">ক্যাটাগরি যোগ করুন</string>
+    <string name="edit_category">ক্যাটাগরি সম্পাদনা করুন</string>
+    <string name="delete_category">ক্যাটাগরি মুছুন</string>
+    <string name="category_name">ক্যাটাগরির নাম</string>
+    <string name="category_icon">আইকন</string>
+    <string name="category_color">রং</string>
+    <string name="confirm_delete_cat">আপনি কি নিশ্চিতভাবে এই ক্যাটাগরিটি মুছে ফেলতে চান?</string>
+
+    <string name="daily">দৈনিক</string>
+    <string name="weekly">সাপ্তাহিক</string>
+    <string name="monthly">মাসিক</string>
+    <string name="yearly">বার্ষিক</string>
+    <string name="total">মোট</string>
+
+    <string name="settings_title">সেটিংস</string>
+    <string name="theme">থিম</string>
+    <string name="dark_mode">ডার্ক মোড</string>
+    <string name="light_mode">লাইট মোড</string>
+    <string name="system_mode">সিস্টেম মোড</string>
+    <string name="security">নিরাপত্তা</string>
+    <string name="biometric_lock">বায়োমেট্রিক লক</string>
+    <string name="biometric_desc">অ্যাপ খুলতে ফিঙ্গারপ্রিন্ট/ফেস আইডি ব্যবহার করুন</string>
+    <string name="change_password">পাসওয়ার্ড পরিবর্তন</string>
+    <string name="current_password">বর্তমান পাসওয়ার্ড</string>
+    <string name="new_password">নতুন পাসওয়ার্ড</string>
+    <string name="about">সম্পর্কে</string>
+    <string name="created_by">Created by Nahid</string>
+    <string name="version">সংস্করণ</string>
+    <string name="language">ভাষা</string>
+    <string name="bengali">বাংলা</string>
+    <string name="english">English</string>
+
+    <string name="app_lock_title">অ্যাপ লক</string>
+    <string name="app_lock_desc">চালিয়ে যেতে বায়োমেট্রিক যাচাইকরণ প্রয়োজন</string>
+    <string name="use_password">পাসওয়ার্ড ব্যবহার করুন</string>
+    <string name="authenticate">যাচাই করুন</string>
+
+    <string name="no_transactions">কোনো লেনদেন নেই</string>
+    <string name="no_transactions_desc">আপনার প্রথম লেনদেন যোগ করে শুরু করুন</string>
+    <string name="no_categories">কোনো ক্যাটাগরি নেই</string>
+    <string name="get_started">শুরু করুন</string>
+    <string name="logout">লগআউট</string>
+    <string name="confirm_logout">আপনি কি লগআউট করতে চান?</string>
+
+    <string name="invalid_email">দয়া করে একটি বৈধ ইমেইল দিন</string>
+    <string name="invalid_password">পাসওয়ার্ড কমপক্ষে ৬ অক্ষর হতে হবে</string>
+    <string name="password_mismatch">পাসওয়ার্ড মিলছে না</string>
+    <string name="login_success">লগইন সফল হয়েছে</string>
+    <string name="register_success">নিবন্ধন সফল হয়েছে</string>
+    <string name="error_generic">একটি ত্রুটি ঘটেছে</string>
+    <string name="error_invalid_credentials">ভুল ইমেইল বা পাসওয়ার্ড</string>
+    <string name="error_email_exists">এই ইমেইলে ইতিমধ্যে একটি অ্যাকাউন্ট আছে</string>
+    <string name="password_updated">পাসওয়ার্ড আপডেট করা হয়েছে</string>
+    <string name="app_secured">অ্যাপ সুরক্ষিত</string>
+</resources>
