@@ -316,14 +316,14 @@ val colors = listOf(IncomeGreen.value, ExpenseRed.value, 0xFF1E40AF, 0xFF059669,
                 Text("রং", style = MaterialTheme.typography.labelMedium)
                 Spacer(Modifier.height(8.dp))
                 Row(modifier = Modifier.fillMaxWidth().height(40.dp)) {
-                    listOf(IncomeGreen.value, ExpenseRed.value, 0xFF1E40AF, 0xFF059669, 0xFF7C3AED, 0xFFEC4899, 0xFFF97316, 0xFF84CC16, 0xFF06B6D4, 0xFFF43F5E).forEach { clr ->
-                        val isSelected = color == clr.toLong()
+                    listOf(IncomeGreen.value.toLong(), ExpenseRed.value.toLong(), 0xFF1E40AF.toLong(), 0xFF059669.toLong(), 0xFF7C3AED.toLong(), 0xFFEC4899.toLong(), 0xFFF97316.toLong(), 0xFF84CC16.toLong(), 0xFF06B6D4.toLong(), 0xFFF43F5E.toLong()).forEach { clr ->
+                        val isSelected = color == clr
                         Box(
                             modifier = Modifier
                                 .size(36.dp)
                                 .clip(RoundedCornerShape(8.dp))
                                 .background(Color(clr))
-                                .clickable { color = clr.toLong() }
+                                .clickable { color = clr }
                                 .padding(4.dp),
                             contentAlignment = Alignment.Center
                         ) {
