@@ -322,7 +322,7 @@ val colors = listOf(IncomeGreen.value, ExpenseRed.value, 0xFF1E40AF, 0xFF059669,
                             modifier = Modifier
                                 .size(36.dp)
                                 .clip(RoundedCornerShape(8.dp))
-                                .background(Color(clr.toLong()))
+                                .background(Color(clr))
                                 .clickable { color = clr.toLong() }
                                 .padding(4.dp),
                             contentAlignment = Alignment.Center
