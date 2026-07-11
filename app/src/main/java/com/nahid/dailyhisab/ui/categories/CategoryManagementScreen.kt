@@ -6,12 +6,13 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.clip
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.clip
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -244,11 +245,11 @@ private fun AddEditCategoryDialog(
     var name by remember { mutableStateOf(category?.name ?: "") }
     var type by remember { mutableStateOf(category?.type ?: "expense") }
     var icon by remember { mutableStateOf(category?.icon ?: "receipt") }
-    var color by remember { mutableStateOf(category?.color ?: (if (type == "income") IncomeGreen else ExpenseRed)) }
+    var color by remember { mutableStateOf(category?.color ?: (if (type == "income") IncomeGreen.value else ExpenseRed.value)) }
     var error by remember { mutableStateOf<String?>(null) }
 
 val icons = listOf("🍽", "🚌", "🏠", "⚡", "🎬", "🛒", "🏥", "🎓", "💼", "💻", "🏪", "📈", "💰", "📋")
-val colors = listOf(IncomeGreen.toArgb(), ExpenseRed.toArgb(), 0xFF1E40AF, 0xFF059669, 0xFF7C3AED, 0xFFEC4899, 0xFFF97316, 0xFF84CC16, 0xFF06B6D4, 0xFFF43F5E)
+val colors = listOf(IncomeGreen.value, ExpenseRed.value, 0xFF1E40AF, 0xFF059669, 0xFF7C3AED, 0xFFEC4899, 0xFFF97316, 0xFF84CC16, 0xFF06B6D4, 0xFFF43F5E)
 
     AlertDialog(
         onDismissRequest = onDismiss,
