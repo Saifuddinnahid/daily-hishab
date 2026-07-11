@@ -21,6 +21,7 @@ import androidx.compose.material.icons.filled.TrendingDown
 import androidx.compose.material.icons.filled.TrendingUp
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Icon
@@ -46,6 +47,7 @@ private enum class ReportPeriod(val label: String) {
     YEARLY("বার্ষিক")
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ReportScreen(userEmail: String) {
     var selectedPeriod by remember { mutableStateOf(ReportPeriod.MONTHLY) }
