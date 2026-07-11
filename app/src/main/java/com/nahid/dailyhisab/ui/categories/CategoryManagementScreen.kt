@@ -342,7 +342,7 @@ val colors = listOf(IncomeGreen.value, ExpenseRed.value, 0xFF1E40AF, 0xFF059669,
                 if (name.trim().isEmpty()) {
                     return@TextButton
                 }
-                onSave(name.trim(), "receipt", color.toLong(), if (type == "income") TransactionType.INCOME else TransactionType.EXPENSE)
+                onSave(name.trim(), "receipt", color.value, if (type == "income") TransactionType.INCOME else TransactionType.EXPENSE)
             }) { Text(if (isEditing) "আপডেট করুন" else "যোগ করুন") }
         },
         dismissButton = {
