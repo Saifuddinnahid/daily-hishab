@@ -5,10 +5,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.BarChart
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.ListAlt
+import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.outlined.BarChart
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.ListAlt
+import androidx.compose.material.icons.outlined.MenuBook
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -43,7 +45,7 @@ sealed class Screen(
     data object Transactions : Screen("transactions", "লেনদেন", Icons.Filled.ListAlt, Icons.Outlined.ListAlt)
     data object Reports : Screen("reports", "রিপোর্ট", Icons.Filled.BarChart, Icons.Outlined.BarChart)
     data object Settings : Screen("settings", "সেটিংস", Icons.Filled.Settings, Icons.Outlined.Settings)
-    data object CategoryManagement : Screen("categories", "ক্যাটাগরি", Icons.Filled.Menu, Icons.Outlined.Menu)
+    data object CategoryManagement : Screen("categories", "ক্যাটাগরি", Icons.Filled.MenuBook, Icons.Outlined.MenuBook)
 }
 
 val bottomNavItems = listOf(
