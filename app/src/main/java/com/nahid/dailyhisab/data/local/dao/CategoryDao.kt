@@ -34,4 +34,7 @@ interface CategoryDao {
 
     @Query("SELECT * FROM categories WHERE isDefault = 1")
     suspend fun getDefaultCategories(): List<CategoryEntity>
+
+    @Query("SELECT COUNT(*) FROM categories WHERE userEmail = :userEmail")
+    suspend fun getCategoryCountByUser(userEmail: String): Int
 }

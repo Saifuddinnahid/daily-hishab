@@ -45,8 +45,8 @@ class CategoryRepository @Inject constructor(
     }
 
     suspend fun initializeDefaultCategories(userEmail: String) {
-        val existing = categoryDao.getCategoriesByUser(userEmail)
-        if (existing is kotlinx.coroutines.flow.Flow) return
+        val count = categoryDao.getCategoryCountByUser(userEmail)
+        if (count > 0) return
 
         val defaults = listOf(
             CategoryEntity(0, "খাবার", "restaurant", 0xFFE53935, "expense", true, 1, userEmail),
