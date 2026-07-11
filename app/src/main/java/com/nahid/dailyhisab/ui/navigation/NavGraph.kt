@@ -43,7 +43,7 @@ sealed class Screen(
     data object Transactions : Screen("transactions", "লেনদেন", Icons.Filled.ListAlt, Icons.Outlined.ListAlt)
     data object Reports : Screen("reports", "রিপোর্ট", Icons.Filled.BarChart, Icons.Outlined.BarChart)
     data object Settings : Screen("settings", "সেটিংস", Icons.Filled.Settings, Icons.Outlined.Settings)
-    data object CategoryManagement : Screen("categories", "ক্যাটাগরি", Icons.Filled.Category, Icons.Outlined.Category)
+    data object CategoryManagement : Screen("categories", "ক্যাটাগরি", Icons.Filled.Folder, Icons.Outlined.Folder)
 }
 
 val bottomNavItems = listOf(
