@@ -3,9 +3,13 @@ name: Build Android APK
 on:
   push:
     branches: [ main ]
+    tags: [ 'v*' ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -35,3 +39,22 @@ jobs:
         with:
           name: daily-hisab-debug
           path: app/build/outputs/apk/debug/*.apk
+
+      - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: দৈনিক হিসাব ${{ github.ref_name }}
+          body: |
+            দৈনিক হিসাব অ্যাপ - ${{ github.ref_name }}
+            
+            Features:
+            - 📊 আয়-ব্যয় ট্র্যাকিং
+            - 🔐 ইমেইল লগইন
+            - 👆 ফিঙ্গারপ্রিন্ট/ফেস আইডি
+            - 📁 ক্যাটাগরি ম্যানেজমেন্ট
+            - 📈 রিপোর্ট
+            - 🌙 ডার্ক মোড
+            
+            Created by Nahid
+          files: app/build/outputs/apk/debug/*.apk
