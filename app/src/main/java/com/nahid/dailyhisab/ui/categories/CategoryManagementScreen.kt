@@ -246,7 +246,7 @@ private fun AddEditCategoryDialog(
     var name by remember { mutableStateOf(category?.name ?: "") }
     var type by remember { mutableStateOf(category?.type ?: "expense") }
     var icon by remember { mutableStateOf(category?.icon ?: "receipt") }
-    var color by remember { mutableStateOf<Long>(category?.color ?: (if (type == "income") IncomeGreen.value else ExpenseRed.value)) }
+    var color by remember { mutableStateOf<Long>(category?.color ?: (if (type == "income") IncomeGreen.value.toLong() else ExpenseRed.value.toLong())) }
     var error by remember { mutableStateOf<String?>(null) }
 
 val icons = listOf("🍽", "🚌", "🏠", "⚡", "🎬", "🛒", "🏥", "🎓", "💼", "💻", "🏪", "📈", "💰", "📋")
